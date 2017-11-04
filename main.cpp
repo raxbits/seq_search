@@ -10,16 +10,16 @@ Sequential search implementation using C++ syntax
 using namespace std;
 
 
-int seq_search_list(int arr[], int elem)
+int seq_search_list(int arr[], int elem,int list_size)
 {
     int loc=-1;
-    int list_size=sizeof(arr)/sizeof(int);
 
     for (int i=0;i<list_size;i++)
     {
 
         if (arr[i]==elem)
             loc=i;
+        cout<<"Checked the " << i+1 << " element" <<endl;
     }
 
 
@@ -42,7 +42,9 @@ int main ()
     }
 
     int feed_list[]={1,2,3,4,5}; // Some Random seq.
-    int pos=seq_search_list(feed_list,choice);
+    int list_size=sizeof(feed_list)/sizeof(int);
+
+    int pos=seq_search_list(feed_list,choice,list_size);
 
     if (pos<0)
         cout << "Item not found"<<endl;
